@@ -1,0 +1,10 @@
+project: savantenvs/cesium-native
+target: fuzz_layer_json
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_layer_json/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_layer_json
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_layer_json/fuzz_layer_json.dict

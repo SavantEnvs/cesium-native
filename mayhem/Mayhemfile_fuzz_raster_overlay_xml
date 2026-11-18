@@ -1,0 +1,10 @@
+project: savantenvs/cesium-native
+target: fuzz_raster_overlay_xml
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_raster_overlay_xml/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_raster_overlay_xml
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_raster_overlay_xml/fuzz_raster_overlay_xml.dict
